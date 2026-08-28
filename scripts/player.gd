@@ -31,7 +31,7 @@ var is_wall_sliding: bool = false
 var last_wall_normal_x: float = 0.0
 
 signal hp_changed(new_hp)
-var hp: int = 5:
+var hp: int = 3:
 	set(value):
 		hp = value
 		hp_changed.emit(hp)
@@ -147,7 +147,7 @@ func take_damage_from_danger(damage: int) -> void:
 func die() -> void:
 	global_position = start_position
 	velocity = Vector2.ZERO
-	hp = 5
+	hp = 3
 
 
 func up_dash() -> void:
