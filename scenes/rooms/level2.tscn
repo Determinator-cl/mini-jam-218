@@ -44,11 +44,11 @@ position = Vector2(-7.9666657, -13.228572)
 scale = Vector2(0.04, 0.04)
 
 [node name="BlockSafePositionUpdate4" parent="Danger" unique_id=571205188 instance=ExtResource("4_by5no")]
-position = Vector2(-7.2500005, -15.457142)
+position = Vector2(-7.25, -15.171426)
 scale = Vector2(0.04, 0.04)
 
 [node name="BlockSafePositionUpdate5" parent="Danger" unique_id=287774141 instance=ExtResource("4_by5no")]
-position = Vector2(-5.816667, -15.485717)
+position = Vector2(-5.8166666, -15.200001)
 scale = Vector2(0.04, 0.04)
 
 [node name="StaticCollision2" parent="." unique_id=906031877 instance=ExtResource("1_rleub")]
@@ -67,7 +67,7 @@ rotation = 1.5707964
 scale = Vector2(3, 0.5)
 
 [node name="StaticCollision5" parent="." unique_id=489321883 instance=ExtResource("1_rleub")]
-position = Vector2(335, -181)
+position = Vector2(336, -171)
 scale = Vector2(3, 0.5)
 
 [node name="StaticCollision6" parent="." unique_id=270145138 instance=ExtResource("1_rleub")]

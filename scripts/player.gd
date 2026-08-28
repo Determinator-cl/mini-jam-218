@@ -14,7 +14,6 @@ const WALL_JUMP_VELOCITY = Vector2(200, -350)
 const WALL_JUMP_LOCKOUT_TIME = 0.1 
 
 var start_position = global_position
-var health = 5
 var safe_position = global_position
 var can_safe_position = true
 var last_direct = 1.0
@@ -29,10 +28,16 @@ var wall_coyote_timer = 0.0
 var wall_jump_lockout_timer = 0.0
 var last_wall_normal_x = 0.0
 
+signal hp_changed(new_hp)
+var hp: int = 5:
+	set(value):
+		hp = value
+		hp_changed.emit(hp)
+
 
 func _physics_process(delta: float) -> void:
 	# Смэртъ
-	if health <= 0:
+	if hp <= 0:
 		die()
 
 	# Апдейтим таймеры
@@ -129,11 +134,11 @@ func _update_safe_position() -> void:
 
 func take_damage_from_danger(damage: int) -> void:
 	set_physics_process(false)
-	health -= damage
+	hp -= damage
 	global_position = safe_position
 	set_physics_process(true)
 
 
 func die() -> void:
 	global_position = start_position
-	health = 5
+	hp = 5
