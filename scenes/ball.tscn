@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c4ffjq7gn8lxv"]
+
+[ext_resource type="PackedScene" uid="uid://byfrboqud4sus" path="res://scenes/fire_particle.tscn" id="1_7s4qf"]
+[ext_resource type="Script" uid="uid://dt04fg6efkgs0" path="res://scripts/ball.gd" id="1_cxlvu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oq8uu"]
+
+[node name="Ball" type="Area2D" unique_id=833987569]
+script = ExtResource("1_cxlvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1875375101]
+shape = SubResource("CircleShape2D_oq8uu")
+debug_color = Color(3.4172833e-06, 0.65, 0.13247752, 0.41960785)
+
+[node name="GPUParticles2D" parent="." unique_id=1908341750 instance=ExtResource("1_7s4qf")]
+
+[node name="GPUParticles2D2" parent="." unique_id=600079184 instance=ExtResource("1_7s4qf")]
+
+[node name="GPUParticles2D3" parent="." unique_id=1926696062 instance=ExtResource("1_7s4qf")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

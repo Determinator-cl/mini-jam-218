@@ -157,3 +157,20 @@ scale = Vector2(1, 4)
 door_type = "left"
 target_room = "res://scenes/rooms/level2.tscn"
 target_door = "Door_A"
+
+[node name="Label" type="Label" parent="." unique_id=1985108265]
+offset_left = -197.0
+offset_top = -301.00003
+offset_right = -33.0
+offset_bottom = -252.00003
+scale = Vector2(0.55999875, 0.6509874)
+text = "What are you looking
+for here?"
+
+[node name="Label2" type="Label" parent="." unique_id=820102327]
+offset_left = 1759.0001
+offset_top = -80.0
+offset_right = 1799.0001
+offset_bottom = -57.0
+scale = Vector2(0.7600391, 0.60000116)
+text = "->"
