@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://e3ba8qj31bqa"]
 
 [ext_resource type="Script" uid="uid://cyft2hap8mmq3" path="res://scripts/tree.gd" id="1_vplca"]
+[ext_resource type="PackedScene" uid="uid://byfrboqud4sus" path="res://scenes/fire_particle.tscn" id="2_qd6xs"]
 [ext_resource type="Texture2D" uid="uid://dtlawpva6prq1" path="res://sprites/tree.png" id="2_viusy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oq8uu"]
 
 [node name="Tree" type="Area2D" unique_id=837104587]
 script = ExtResource("1_vplca")
-fire_scene = "uid://byfrboqud4sus"
+fire_scene = ExtResource("2_qd6xs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1997130022]
 position = Vector2(0, -10)

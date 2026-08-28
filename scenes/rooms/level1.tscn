@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://e4wamm3h5yd8" path="res://scenes/danger.tscn" id="2_ruykt"]
 [ext_resource type="PackedScene" uid="uid://d2lg5mbrjvhag" path="res://scenes/block_safe_position_update.tscn" id="3_guc4l"]
 [ext_resource type="PackedScene" uid="uid://ejnhvapvfdqy" path="res://scenes/water_shader.tscn" id="4_guc4l"]
+[ext_resource type="PackedScene" uid="uid://e3ba8qj31bqa" path="res://scenes/tree.tscn" id="5_xvfsy"]
+[ext_resource type="PackedScene" uid="uid://bykjukw6sopdq" path="res://scenes/door.tscn" id="6_foc25"]
 
 [node name="Level1" type="Node2D" unique_id=425942809]
 
@@ -66,6 +68,14 @@ scale = Vector2(0.05, 0.1)
 position = Vector2(2.5000007, -11.314286)
 scale = Vector2(0.05, 0.1)
 
+[node name="BlockSafePositionUpdate11" parent="Danger" unique_id=1480518511 instance=ExtResource("3_guc4l")]
+position = Vector2(5.6166677, -13.914287)
+scale = Vector2(0.05, 0.1)
+
+[node name="BlockSafePositionUpdate12" parent="Danger" unique_id=1886541422 instance=ExtResource("3_guc4l")]
+position = Vector2(7.8500013, -14.000001)
+scale = Vector2(0.05, 0.1)
+
 [node name="StaticCollision3" parent="." unique_id=930908622 instance=ExtResource("1_4y7jp")]
 position = Vector2(289, -24.399994)
 scale = Vector2(5, 0.5)
@@ -80,7 +90,7 @@ rotation = 1.5707964
 scale = Vector2(5, 0.5)
 
 [node name="StaticCollision6" parent="." unique_id=13688139 instance=ExtResource("1_4y7jp")]
-position = Vector2(552, -200)
+position = Vector2(552, -192)
 scale = Vector2(5, 0.5)
 
 [node name="StaticCollision7" parent="." unique_id=312692930 instance=ExtResource("1_4y7jp")]
@@ -131,3 +141,19 @@ scale = Vector2(5, 0.5)
 [node name="StaticCollision17" parent="." unique_id=355640361 instance=ExtResource("1_4y7jp")]
 position = Vector2(1600, 400)
 scale = Vector2(20, 40)
+
+[node name="Tree" parent="." unique_id=837104587 instance=ExtResource("5_xvfsy")]
+position = Vector2(1733, -20)
+scale = Vector2(2, 2)
+
+[node name="StaticCollision18" parent="." unique_id=486016745 instance=ExtResource("1_4y7jp")]
+position = Vector2(1399, 11.999954)
+rotation = 0.7853982
+scale = Vector2(1.5, 1.5)
+
+[node name="Door_A" parent="." unique_id=2068487414 instance=ExtResource("6_foc25")]
+position = Vector2(1790, -41)
+scale = Vector2(1, 4)
+door_type = "left"
+target_room = "res://scenes/rooms/level2.tscn"
+target_door = "Door_A"

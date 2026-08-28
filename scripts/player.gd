@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 
-const WALK_SPEED = 150
-const JUMP_VELOCITY = -275
+const WALK_SPEED = 125
+const JUMP_VELOCITY = -300
 const JUMP_CUT_MULTIPLIER = 0.5
-const DASH_SPEED = 525
+const DASH_SPEED = 475
 const DASH_DURATION = 0.2
 const DASH_COOLDOWN = 0.3
 const COYOTE_TIME = 0.1
