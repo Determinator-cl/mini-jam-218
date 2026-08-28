@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d2lg5mbrjvhag"]
+
+[ext_resource type="Script" uid="uid://bc3vikx0kde8q" path="res://scripts/block_safe_position_update.gd" id="1_yiu63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq8uu"]
+
+[node name="BlockSafePositionUpdate" type="Area2D" unique_id=1171033447]
+script = ExtResource("1_yiu63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=71211644]
+shape = SubResource("RectangleShape2D_oq8uu")
+debug_color = Color(0.91816527, 0.28555086, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

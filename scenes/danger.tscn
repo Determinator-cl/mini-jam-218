@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://e4wamm3h5yd8"]
+
+[ext_resource type="Script" uid="uid://prgfnd4gvd61" path="res://scripts/danger.gd" id="1_ni877"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq8uu"]
+
+[node name="Danger" type="Area2D" unique_id=2001204671]
+collision_layer = 4
+script = ExtResource("1_ni877")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=436200648]
+shape = SubResource("RectangleShape2D_oq8uu")
+debug_color = Color(0.9999998, 0.012140645, 0.05033476, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

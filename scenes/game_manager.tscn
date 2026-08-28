@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://058h188ummwq"]
+
+[ext_resource type="PackedScene" uid="uid://bn2h26feusmw0" path="res://scenes/player.tscn" id="1_0drbn"]
+[ext_resource type="Script" uid="uid://bj5v7wjxtsste" path="res://scripts/room_container.gd" id="2_kc0kb"]
+[ext_resource type="PackedScene" uid="uid://66u4je1y3412" path="res://scenes/blackout.tscn" id="3_udu3i"]
+
+[sub_resource type="Environment" id="Environment_oo155"]
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 2.0
+glow_blend_mode = 0
+
+[node name="GameManager" type="Node2D" unique_id=522534571]
+
+[node name="Player" parent="." unique_id=507955245 instance=ExtResource("1_0drbn")]
+collision_mask = 14
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1443291329]
+
+[node name="RoomContainer" type="Node2D" parent="." unique_id=2024388714 node_paths=PackedStringArray("player", "fade_screen")]
+script = ExtResource("2_kc0kb")
+start_room = "uid://bxmfwrev4i0yv"
+player = NodePath("../Player")
+fade_screen = NodePath("Blackout")
+
+[node name="Blackout" parent="RoomContainer" unique_id=470927943 instance=ExtResource("3_udu3i")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1850151406]
+environment = SubResource("Environment_oo155")

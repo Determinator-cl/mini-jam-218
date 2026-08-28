@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bn2h26feusmw0"]
+
+[ext_resource type="Script" uid="uid://c2fln7w22pmk6" path="res://scripts/player.gd" id="1_8afob"]
+[ext_resource type="PackedScene" uid="uid://byfrboqud4sus" path="res://scenes/fire_particle.tscn" id="2_g2els"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq8uu"]
+
+[node name="Player" type="CharacterBody2D" unique_id=507955245 groups=["Player"]]
+scale = Vector2(0.5, 0.5)
+collision_mask = 6
+script = ExtResource("1_8afob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=532270469]
+shape = SubResource("RectangleShape2D_oq8uu")
+debug_color = Color(0, 0.63839436, 0.38354674, 0.41960785)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=686725922 groups=["Player"]]
+zoom = Vector2(3, 3)
+limit_left = -250
+limit_bottom = 40
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="GPUParticles2D" parent="." unique_id=1908341750 instance=ExtResource("2_g2els")]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=992047130]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 30.0
+offset_bottom = 30.0
+scale = Vector2(0.5, 0.5)
+color = Color(0.85, 0.28333336, 0, 0.53333336)

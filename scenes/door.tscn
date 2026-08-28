@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bykjukw6sopdq"]
+
+[ext_resource type="Script" uid="uid://bpdgbb4f3bfr5" path="res://scripts/door.gd" id="1_hpvv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq8uu"]
+
+[node name="Door" type="Area2D" unique_id=2068487414]
+collision_layer = 8
+script = ExtResource("1_hpvv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1667138098]
+shape = SubResource("RectangleShape2D_oq8uu")
+debug_color = Color(1, 1, 1, 0.41960785)

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://66u4je1y3412"]
+
+[ext_resource type="Script" uid="uid://uv07a6yvxdhl" path="res://scripts/blackout.gd" id="1_08rqe"]
+
+[node name="Blackout" type="CanvasLayer" unique_id=470927943]
+script = ExtResource("1_08rqe")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=702923716]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.96, 16.280003)
+color = Color(0, 0, 0, 1)
