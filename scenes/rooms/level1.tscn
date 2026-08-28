@@ -16,7 +16,7 @@ position = Vector2(-600, 5)
 scale = Vector2(40, 80)
 
 [node name="Danger" parent="." unique_id=2001204671 instance=ExtResource("2_ruykt")]
-position = Vector2(800, 366)
+position = Vector2(800, 359)
 scale = Vector2(60, 35)
 
 [node name="BlockSafePositionUpdate" parent="Danger" unique_id=1171033447 instance=ExtResource("3_guc4l")]
@@ -31,8 +31,8 @@ offset_bottom = 30.257143
 scale = Vector2(0.5, 0.5)
 
 [node name="BlockSafePositionUpdate2" parent="Danger" unique_id=353658993 instance=ExtResource("3_guc4l")]
-position = Vector2(-6.3333335, -11.542857)
-scale = Vector2(0.18, 0.1)
+position = Vector2(-6.383333, -13.257142)
+scale = Vector2(0.18, 0.245)
 
 [node name="BlockSafePositionUpdate3" parent="Danger" unique_id=638463450 instance=ExtResource("3_guc4l")]
 position = Vector2(-9.5, -11.542857)
@@ -40,6 +40,30 @@ scale = Vector2(0.05, 0.1)
 
 [node name="BlockSafePositionUpdate4" parent="Danger" unique_id=2086930087 instance=ExtResource("3_guc4l")]
 position = Vector2(-2.9999995, -11.542856)
+scale = Vector2(0.05, 0.1)
+
+[node name="BlockSafePositionUpdate5" parent="Danger" unique_id=700139973 instance=ExtResource("3_guc4l")]
+position = Vector2(-5.1166663, -16.057142)
+scale = Vector2(0.05, 0.1)
+
+[node name="BlockSafePositionUpdate6" parent="Danger" unique_id=1086030646 instance=ExtResource("3_guc4l")]
+position = Vector2(-3.083334, -16.085714)
+scale = Vector2(0.05, 0.1)
+
+[node name="BlockSafePositionUpdate7" parent="Danger" unique_id=817017894 instance=ExtResource("3_guc4l")]
+position = Vector2(-1.1166672, -15.057143)
+scale = Vector2(0.05, 0.1)
+
+[node name="BlockSafePositionUpdate8" parent="Danger" unique_id=1150085384 instance=ExtResource("3_guc4l")]
+position = Vector2(1.0833329, -15.085714)
+scale = Vector2(0.05, 0.1)
+
+[node name="BlockSafePositionUpdate9" parent="Danger" unique_id=538676674 instance=ExtResource("3_guc4l")]
+position = Vector2(4.5666676, -11.171429)
+scale = Vector2(0.05, 0.1)
+
+[node name="BlockSafePositionUpdate10" parent="Danger" unique_id=309569150 instance=ExtResource("3_guc4l")]
+position = Vector2(2.5000007, -11.314286)
 scale = Vector2(0.05, 0.1)
 
 [node name="StaticCollision3" parent="." unique_id=930908622 instance=ExtResource("1_4y7jp")]
@@ -51,6 +75,59 @@ position = Vector2(552, -24.399994)
 scale = Vector2(5, 0.5)
 
 [node name="StaticCollision5" parent="." unique_id=1919884006 instance=ExtResource("1_4y7jp")]
-position = Vector2(417, -117)
+position = Vector2(417, -107)
 rotation = 1.5707964
 scale = Vector2(5, 0.5)
+
+[node name="StaticCollision6" parent="." unique_id=13688139 instance=ExtResource("1_4y7jp")]
+position = Vector2(552, -200)
+scale = Vector2(5, 0.5)
+
+[node name="StaticCollision7" parent="." unique_id=312692930 instance=ExtResource("1_4y7jp")]
+position = Vector2(795, -166)
+scale = Vector2(5, 0.5)
+
+[node name="StaticCollision8" parent="." unique_id=606409453 instance=ExtResource("1_4y7jp")]
+position = Vector2(861, -72)
+rotation = 1.5707964
+scale = Vector2(8, 0.5)
+
+[node name="StaticCollision9" parent="." unique_id=1711957665 instance=ExtResource("1_4y7jp")]
+position = Vector2(857.00006, -162.00002)
+rotation = 0.7853982
+scale = Vector2(1.5, 1.5)
+
+[node name="StaticCollision10" parent="." unique_id=2033136622 instance=ExtResource("1_4y7jp")]
+position = Vector2(932, -261.285)
+rotation = 1.5707964
+scale = Vector2(20, 0.5)
+
+[node name="StaticCollision11" parent="." unique_id=1480489959 instance=ExtResource("1_4y7jp")]
+position = Vector2(1014, -25)
+scale = Vector2(5, 0.5)
+
+[node name="StaticCollision12" parent="." unique_id=1416245070 instance=ExtResource("1_4y7jp")]
+position = Vector2(607, -29.000015)
+rotation = 0.7853982
+scale = Vector2(1.2, 1.2)
+
+[node name="StaticCollision13" parent="." unique_id=368249506 instance=ExtResource("1_4y7jp")]
+position = Vector2(382, -131)
+scale = Vector2(3, 0.5)
+
+[node name="StaticCollision14" parent="." unique_id=1043601630 instance=ExtResource("1_4y7jp")]
+position = Vector2(-194, -6.000004)
+rotation = 0.7853982
+scale = Vector2(1.2, 1.2)
+
+[node name="StaticCollision15" parent="." unique_id=1967258424 instance=ExtResource("1_4y7jp")]
+position = Vector2(863.995, -456.285)
+scale = Vector2(120, 0.5)
+
+[node name="StaticCollision16" parent="." unique_id=859164988 instance=ExtResource("1_4y7jp")]
+position = Vector2(1200, -130)
+scale = Vector2(5, 0.5)
+
+[node name="StaticCollision17" parent="." unique_id=355640361 instance=ExtResource("1_4y7jp")]
+position = Vector2(1600, 400)
+scale = Vector2(20, 40)

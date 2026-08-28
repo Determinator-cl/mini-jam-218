@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://e3ba8qj31bqa"]
+
+[ext_resource type="Script" uid="uid://cyft2hap8mmq3" path="res://scripts/tree.gd" id="1_vplca"]
+[ext_resource type="Texture2D" uid="uid://dtlawpva6prq1" path="res://sprites/tree.png" id="2_viusy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oq8uu"]
+
+[node name="Tree" type="Area2D" unique_id=837104587]
+script = ExtResource("1_vplca")
+fire_scene = "uid://byfrboqud4sus"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1997130022]
+position = Vector2(0, -10)
+scale = Vector2(2.2, 2)
+shape = SubResource("RectangleShape2D_oq8uu")
+debug_color = Color(0, 0.6483944, 0.19203007, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2098510663]
+texture_filter = 1
+position = Vector2(1, -6)
+texture = ExtResource("2_viusy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

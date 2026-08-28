@@ -17,6 +17,7 @@ debug_color = Color(0, 0.63839436, 0.38354674, 0.41960785)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=686725922 groups=["Player"]]
 zoom = Vector2(3, 3)
 limit_left = -250
+limit_top = -300
 limit_bottom = 40
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
