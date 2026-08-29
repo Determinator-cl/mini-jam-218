@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://0mlv7er8ub27"]
+
+[ext_resource type="PackedScene" uid="uid://e3ba8qj31bqa" path="res://scenes/tree.tscn" id="1_ws7n6"]
+[ext_resource type="PackedScene" uid="uid://ejnhvapvfdqy" path="res://scenes/water_shader.tscn" id="2_dn3hh"]
+[ext_resource type="PackedScene" uid="uid://qjw1hi2ihonq" path="res://scenes/static_collision.tscn" id="3_xdumk"]
+[ext_resource type="PackedScene" uid="uid://byfrboqud4sus" path="res://scenes/fire_particle.tscn" id="4_8cutk"]
+[ext_resource type="Script" uid="uid://cvrhttk0fglnr" path="res://scripts/start.gd" id="5_dn3hh"]
+[ext_resource type="Script" uid="uid://saxn53ii5a67" path="res://scripts/music.gd" id="6_xdumk"]
+[ext_resource type="AudioStream" uid="uid://djkfxfas2xduq" path="res://sounds/Water Theme - G Major - Jordan Ottesen.mp3" id="7_8cutk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn3hh"]
+bg_color = Color(0, 0, 0, 1)
+draw_center = false
+border_color = Color(1, 1, 1, 1)
+corner_detail = 15
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(0.605, 1.185)
+
+[node name="MainMenu" type="Node2D" unique_id=1218678800]
+
+[node name="Tree" parent="." unique_id=837104587 instance=ExtResource("1_ws7n6")]
+position = Vector2(930.99994, 379)
+rotation = 0.14966309
+scale = Vector2(10, 10)
+
+[node name="ColorRect" parent="." unique_id=894670755 instance=ExtResource("2_dn3hh")]
+offset_left = 159.0
+offset_top = 482.0
+offset_right = 199.0
+offset_bottom = 522.0
+scale = Vector2(13.19, 13.19)
+
+[node name="StaticCollision" parent="." unique_id=801984992 instance=ExtResource("3_xdumk")]
+position = Vector2(153, 757)
+scale = Vector2(20, 30)
+
+[node name="StaticCollision2" parent="." unique_id=1469289675 instance=ExtResource("3_xdumk")]
+position = Vector2(900, 757)
+scale = Vector2(40, 30)
+
+[node name="StaticCollision3" parent="." unique_id=1524113337 instance=ExtResource("3_xdumk")]
+position = Vector2(-7, 417)
+rotation = 0.7853982
+scale = Vector2(10, 10)
+
+[node name="GPUParticles2D" parent="." unique_id=1908341750 instance=ExtResource("4_8cutk")]
+position = Vector2(842, 309.00003)
+scale = Vector2(20, 20)
+
+[node name="GPUParticles2D2" parent="." unique_id=792684580 instance=ExtResource("4_8cutk")]
+position = Vector2(1164, 249)
+scale = Vector2(20, 20)
+
+[node name="GPUParticles2D3" parent="." unique_id=1509868055 instance=ExtResource("4_8cutk")]
+position = Vector2(693.0001, 195.99998)
+scale = Vector2(20, 20)
+
+[node name="GPUParticles2D4" parent="." unique_id=1931188556 instance=ExtResource("4_8cutk")]
+position = Vector2(693.0001, 195.99998)
+scale = Vector2(20, 20)
+
+[node name="GPUParticles2D5" parent="." unique_id=2091036266 instance=ExtResource("4_8cutk")]
+position = Vector2(1123, 296)
+scale = Vector2(20, 20)
+
+[node name="GPUParticles2D6" parent="." unique_id=2070117695 instance=ExtResource("4_8cutk")]
+position = Vector2(990.0001, 138.00005)
+scale = Vector2(20, 20)
+
+[node name="Start" type="Button" parent="." unique_id=767658342]
+offset_left = 274.0
+offset_top = 3.0
+offset_right = 556.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_dn3hh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dn3hh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dn3hh")
+text = "Start"
+script = ExtResource("5_dn3hh")
+
+[node name="Music" type="Button" parent="." unique_id=195123259]
+offset_left = 10.0
+offset_top = 325.0
+offset_right = 833.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_dn3hh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dn3hh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dn3hh")
+text = "Download this music"
+script = ExtResource("6_xdumk")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=401608354]
+stream = ExtResource("7_8cutk")
+autoplay = true
+
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Music" to="Music" method="_on_pressed"]
