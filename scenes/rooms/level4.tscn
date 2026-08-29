@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://djglsi0clkoqk"]
+
+[ext_resource type="PackedScene" uid="uid://qjw1hi2ihonq" path="res://scenes/static_collision.tscn" id="1_bwy2s"]
+[ext_resource type="PackedScene" uid="uid://bykjukw6sopdq" path="res://scenes/door.tscn" id="2_igsgq"]
+[ext_resource type="PackedScene" uid="uid://e4wamm3h5yd8" path="res://scenes/danger.tscn" id="3_r43u2"]
+[ext_resource type="PackedScene" uid="uid://d2lg5mbrjvhag" path="res://scenes/block_safe_position_update.tscn" id="4_ml0t4"]
+[ext_resource type="PackedScene" uid="uid://ejnhvapvfdqy" path="res://scenes/water_shader.tscn" id="5_fqx8k"]
+[ext_resource type="PackedScene" uid="uid://dm22qef1nbnqw" path="res://scenes/change_gravity.tscn" id="6_lhjcq"]
+[ext_resource type="PackedScene" uid="uid://b3kjniu1pivq6" path="res://scenes/crumbling_platform.tscn" id="7_fqx8k"]
+[ext_resource type="PackedScene" uid="uid://c4ffjq7gn8lxv" path="res://scenes/ball.tscn" id="8_lhjcq"]
+
+[node name="Level4" type="Node2D" unique_id=1177318344]
+
+[node name="StaticCollision" parent="." unique_id=801984992 instance=ExtResource("1_bwy2s")]
+position = Vector2(-157, 300.00003)
+scale = Vector2(30, 30)
+
+[node name="Door_A" parent="." unique_id=2068487414 instance=ExtResource("2_igsgq")]
+position = Vector2(-271, -99.00001)
+scale = Vector2(1, 10)
+door_type = "right"
+target_room = "res://scenes/rooms/level3.tscn"
+target_door = "Door_B"
+
+[node name="Danger" parent="." unique_id=2001204671 instance=ExtResource("3_r43u2")]
+position = Vector2(883.00006, 365.00003)
+scale = Vector2(74, 36.045)
+
+[node name="BlockSafePositionUpdate" parent="Danger" unique_id=1171033447 instance=ExtResource("4_ml0t4")]
+position = Vector2(0, -0.95)
+scale = Vector2(1.045, 0.985)
+
+[node name="ColorRect" parent="Danger" unique_id=894670755 instance=ExtResource("5_fqx8k")]
+offset_left = -10.133333
+offset_top = -9.742857
+offset_right = 29.866667
+offset_bottom = 30.257143
+scale = Vector2(0.5, 0.5)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticCollision2" parent="." unique_id=2064925380 instance=ExtResource("1_bwy2s")]
+position = Vector2(-279, -656)
+scale = Vector2(1.65, 45.61)
+
+[node name="StaticCollision3" parent="." unique_id=85490560 instance=ExtResource("1_bwy2s")]
+position = Vector2(1724, -272)
+rotation = 1.5707964
+scale = Vector2(0.5, 200)
+
+[node name="BlockSafePositionUpdate" parent="StaticCollision3" unique_id=1458844204 instance=ExtResource("4_ml0t4")]
+scale = Vector2(6.905, 1)
+
+[node name="ChangeGravity" parent="." unique_id=912245664 instance=ExtResource("6_lhjcq")]
+position = Vector2(171, -190)
+
+[node name="Ball" parent="." unique_id=833987569 instance=ExtResource("8_lhjcq")]
+position = Vector2(173, -61)
+
+[node name="StaticCollision4" parent="." unique_id=1731831048 instance=ExtResource("1_bwy2s")]
+position = Vector2(435, -237)
+scale = Vector2(0.5, 3)
+
+[node name="CrumblingPlatform" parent="." unique_id=810243419 instance=ExtResource("7_fqx8k")]
+position = Vector2(386, -165)
+scale = Vector2(0.5, 3)
+
+[node name="CrumblingPlatform2" parent="." unique_id=1507366841 instance=ExtResource("7_fqx8k")]
+position = Vector2(443, -87)
+scale = Vector2(0.5, 3)
+
+[node name="ChangeGravity2" parent="." unique_id=619463091 instance=ExtResource("6_lhjcq")]
+position = Vector2(506, -85)
+
+[node name="StaticCollision5" parent="." unique_id=1592146805 instance=ExtResource("1_bwy2s")]
+position = Vector2(565, -46)
+scale = Vector2(3, 0.5)
+
+[node name="BlockSafePositionUpdate" parent="StaticCollision5" unique_id=2016920906 instance=ExtResource("4_ml0t4")]
+position = Vector2(-11.333334, -6)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate2" parent="StaticCollision5" unique_id=1985208541 instance=ExtResource("4_ml0t4")]
+position = Vector2(10.333334, -10)
+scale = Vector2(0.5, 3)
+
+[node name="CrumblingPlatform3" parent="." unique_id=225667859 instance=ExtResource("7_fqx8k")]
+position = Vector2(386, -165)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate" parent="CrumblingPlatform3" unique_id=813949462 instance=ExtResource("4_ml0t4")]
+scale = Vector2(1.75, 1.75)
+
+[node name="CrumblingPlatform4" parent="." unique_id=1028594864 instance=ExtResource("7_fqx8k")]
+position = Vector2(443, -87)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate" parent="CrumblingPlatform4" unique_id=1654988104 instance=ExtResource("4_ml0t4")]
+scale = Vector2(1.75, 1.75)
+
+[node name="Ball2" parent="." unique_id=89771145 instance=ExtResource("8_lhjcq")]
+position = Vector2(684, -82)
+
+[node name="ChangeGravity3" parent="." unique_id=1896449726 instance=ExtResource("6_lhjcq")]
+position = Vector2(686, -174)
+
+[node name="Ball3" parent="." unique_id=1625547407 instance=ExtResource("8_lhjcq")]
+position = Vector2(826, -227)
+
+[node name="StaticCollision6" parent="." unique_id=1562113506 instance=ExtResource("1_bwy2s")]
+position = Vector2(594, -208)
+scale = Vector2(0.5, 6)
+
+[node name="CrumblingPlatform5" parent="." unique_id=536205851 instance=ExtResource("7_fqx8k")]
+position = Vector2(913.00006, -125)
+scale = Vector2(3, 0.5)
+
+[node name="BlockSafePositionUpdate" parent="CrumblingPlatform5" unique_id=1494645441 instance=ExtResource("4_ml0t4")]
+scale = Vector2(2.32, 4.005)
+
+[node name="StaticCollision7" parent="." unique_id=1786133596 instance=ExtResource("1_bwy2s")]
+position = Vector2(1009, -126)
+scale = Vector2(3, 0.5)
+
+[node name="BlockSafePositionUpdate" parent="StaticCollision7" unique_id=152250335 instance=ExtResource("4_ml0t4")]
+position = Vector2(-8.333333, -2)
+scale = Vector2(3, 4)
+
+[node name="CrumblingPlatform6" parent="." unique_id=600258322 instance=ExtResource("7_fqx8k")]
+position = Vector2(1089, -78)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate" parent="CrumblingPlatform6" unique_id=1991548415 instance=ExtResource("4_ml0t4")]
+scale = Vector2(1.75, 1.75)
+
+[node name="ChangeGravity4" parent="." unique_id=1430359800 instance=ExtResource("6_lhjcq")]
+position = Vector2(1179, -83)
+
+[node name="StaticCollision8" parent="." unique_id=896167015 instance=ExtResource("1_bwy2s")]
+position = Vector2(1235, -45)
+scale = Vector2(3, 0.5)
+
+[node name="BlockSafePositionUpdate" parent="StaticCollision8" unique_id=1755888437 instance=ExtResource("4_ml0t4")]
+position = Vector2(-11.333334, -6)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate2" parent="StaticCollision8" unique_id=435616333 instance=ExtResource("4_ml0t4")]
+position = Vector2(10.333334, -10)
+scale = Vector2(0.5, 3)
+
+[node name="Ball4" parent="." unique_id=1419529223 instance=ExtResource("8_lhjcq")]
+position = Vector2(1361, -49)
+
+[node name="CrumblingPlatform7" parent="." unique_id=1269732253 instance=ExtResource("7_fqx8k")]
+position = Vector2(1441, -184)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate" parent="CrumblingPlatform7" unique_id=1570666233 instance=ExtResource("4_ml0t4")]
+scale = Vector2(1.75, 1.75)
+
+[node name="CrumblingPlatform8" parent="." unique_id=1871131640 instance=ExtResource("7_fqx8k")]
+position = Vector2(1553, -186)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate" parent="CrumblingPlatform8" unique_id=1645116607 instance=ExtResource("4_ml0t4")]
+scale = Vector2(1.75, 1.75)
+
+[node name="CrumblingPlatform9" parent="." unique_id=88045277 instance=ExtResource("7_fqx8k")]
+position = Vector2(1671, -185)
+scale = Vector2(0.5, 3)
+
+[node name="BlockSafePositionUpdate" parent="CrumblingPlatform9" unique_id=40704926 instance=ExtResource("4_ml0t4")]
+scale = Vector2(1.75, 1.75)
+
+[node name="StaticCollision9" parent="." unique_id=2005207628 instance=ExtResource("1_bwy2s")]
+position = Vector2(1765, -125)
+scale = Vector2(0.5, 15)
+
+[node name="BlockSafePositionUpdate" parent="StaticCollision9" unique_id=101813372 instance=ExtResource("4_ml0t4")]
+scale = Vector2(3.885, 1.975)
+
+[node name="Label2" type="Label" parent="." unique_id=1924856676]
+offset_left = 1712.0001
+offset_top = -88.00001
+offset_right = 1870.0001
+offset_bottom = -65.00001
+rotation = 1.5222387
+scale = Vector2(1.675993, 0.8661892)
+text = "->"
+
+[node name="StaticCollision10" parent="." unique_id=1940310007 instance=ExtResource("1_bwy2s")]
+position = Vector2(3508, -98)
+scale = Vector2(0.5, 17.635)
+
+[node name="BlockSafePositionUpdate" parent="StaticCollision10" unique_id=1903610293 instance=ExtResource("4_ml0t4")]
+scale = Vector2(3.885, 1.975)
+
+[node name="StaticCollision11" parent="." unique_id=44847413 instance=ExtResource("1_bwy2s")]
+position = Vector2(2037.0002, 267)
+scale = Vector2(30, 30)
+
+[node name="StaticCollision12" parent="." unique_id=1900620801 instance=ExtResource("1_bwy2s")]
+position = Vector2(1627, 267)
+scale = Vector2(5, 30)
+
+[node name="Door_B" parent="." unique_id=1032899518 instance=ExtResource("2_igsgq")]
+position = Vector2(1707, -23)
+scale = Vector2(3, 1)
+door_type = "up"
+target_room = "res://scenes/rooms/level5.tscn"
+target_door = "Door_A"

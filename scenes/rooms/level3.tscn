@@ -119,8 +119,8 @@ position = Vector2(1721, -211)
 scale = Vector2(2, 2)
 
 [node name="Door_B" parent="." unique_id=901601221 instance=ExtResource("2_lcuwi")]
-position = Vector2(1795, -241)
-scale = Vector2(5, 5)
+position = Vector2(1775, -264)
+scale = Vector2(1, 10)
 door_type = "left"
 target_room = "res://scenes/rooms/level4.tscn"
 target_door = "Door_A"

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const WALK_SPEED = 125.0
-const JUMP_VELOCITY = -300.0
+var JUMP_VELOCITY = -300.0
 const JUMP_CUT_MULTIPLIER = 0.5
 const DASH_SPEED = 475.0
 const DASH_DURATION = 0.2
@@ -9,9 +9,12 @@ const UP_DASH_DURATION = 0.06
 const DASH_COOLDOWN = 0.3
 const COYOTE_TIME = 0.1
 const JUMP_BUFFER_TIME = 0.1
-const WALL_SLIDE_GRAVITY = 50.0
-const WALL_JUMP_VELOCITY = Vector2(200.0, -350.0)
+var WALL_SLIDE_GRAVITY = 50.0
+var WALL_JUMP_VELOCITY = Vector2(200.0, -350.0)
 const WALL_JUMP_LOCKOUT_TIME = 0.1 
+
+var is_gravity_changed: bool = false
+var grav_dir: float = 1.0 
 
 var start_position: Vector2
 var safe_position: Vector2
@@ -38,12 +41,12 @@ var hp: int = 3:
 
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	start_position = global_position
 	safe_position = global_position
 
 
 func _physics_process(delta: float) -> void:
-	# Смэртъ
 	if hp <= 0:
 		die()
 		return 
@@ -66,17 +69,18 @@ func _physics_process(delta: float) -> void:
 	else:
 		is_wall_sliding = false
 
-	# Состояние земли & coyote time 
+	# Состояние земли & coyote time
 	if is_on_floor():
 		coyote_timer = COYOTE_TIME
 		if dash_cooldown_timer <= 0:
 			can_dash = true
 
 	if dash_timer <= 0 and up_dash_timer <= 0:
-		if is_wall_sliding and velocity.y > 0:
-			velocity.y = WALL_SLIDE_GRAVITY
+		var is_falling = (velocity.y * grav_dir) > 0
+		if is_wall_sliding and is_falling:
+			velocity.y = WALL_SLIDE_GRAVITY * grav_dir
 		else:
-			velocity += get_gravity() * delta
+			velocity += get_gravity() * grav_dir * delta
 
 	# Ввод дэша
 	if Input.is_action_just_pressed("dash") and can_dash:
@@ -84,25 +88,25 @@ func _physics_process(delta: float) -> void:
 		dash_cooldown_timer = DASH_COOLDOWN
 		can_dash = false
 
-	#Ввод прыжка & Buffer
 	if Input.is_action_just_pressed("jump"):
 		jump_buffer_timer = JUMP_BUFFER_TIME
 
 	if jump_buffer_timer > 0:
 		if is_wall_sliding or wall_coyote_timer > 0:
 			velocity.x = last_wall_normal_x * WALL_JUMP_VELOCITY.x
-			velocity.y = WALL_JUMP_VELOCITY.y
+			velocity.y = WALL_JUMP_VELOCITY.y * grav_dir
 			jump_buffer_timer = 0.0
 			wall_coyote_timer = 0.0
 			is_wall_sliding = false
 			wall_jump_lockout_timer = WALL_JUMP_LOCKOUT_TIME
 			
 		elif is_on_floor() or coyote_timer > 0:
-			velocity.y = JUMP_VELOCITY
+			velocity.y = JUMP_VELOCITY * grav_dir
 			jump_buffer_timer = 0.0
 			coyote_timer = 0.0
 
-	if Input.is_action_just_released("jump") and velocity.y < 0:
+	var is_moving_up = (velocity.y * grav_dir) < 0
+	if Input.is_action_just_released("jump") and is_moving_up:
 		velocity.y *= JUMP_CUT_MULTIPLIER
 
 	if dash_timer > 0:
@@ -110,7 +114,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = DASH_SPEED * last_direct
 	elif up_dash_timer > 0:
 		velocity.x = WALK_SPEED * direct 
-		velocity.y = -DASH_SPEED
+		velocity.y = -DASH_SPEED * grav_dir
 	else:
 		if wall_jump_lockout_timer <= 0:
 			velocity.x = WALK_SPEED * direct
@@ -153,3 +157,13 @@ func die() -> void:
 func up_dash() -> void:
 	up_dash_timer = UP_DASH_DURATION
 	can_dash = true
+
+
+func change_gravity() -> void:
+	is_gravity_changed = !is_gravity_changed
+	grav_dir = -1.0 if is_gravity_changed else 1.0
+	
+	up_direction = Vector2.DOWN if is_gravity_changed else Vector2.UP
+	
+	# Визуально переворачиваем персонажа по вертикали
+	scale.y = -abs(scale.y) if is_gravity_changed else abs(scale.y)

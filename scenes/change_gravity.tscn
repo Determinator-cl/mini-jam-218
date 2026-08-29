@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dm22qef1nbnqw"]
+
+[ext_resource type="PackedScene" uid="uid://beoykru6clkf4" path="res://scenes/gravity_particle.tscn" id="1_dsird"]
+[ext_resource type="Script" uid="uid://dbk3uso0jx0h5" path="res://scripts/change_gravity.gd" id="1_k1tnh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oq8uu"]
+
+[node name="ChangeGravity" type="Area2D" unique_id=912245664]
+script = ExtResource("1_k1tnh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651313959]
+shape = SubResource("CircleShape2D_oq8uu")
+debug_color = Color(6.256998e-07, 0.63855046, 0.38143548, 0.41960785)
+
+[node name="GPUParticles2D" parent="." unique_id=1908341750 instance=ExtResource("1_dsird")]
+
+[node name="GPUParticles2D2" parent="." unique_id=534896236 instance=ExtResource("1_dsird")]
+
+[node name="GPUParticles2D3" parent="." unique_id=1848969013 instance=ExtResource("1_dsird")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://hdho4wl8n6ii"]
+
+[ext_resource type="PackedScene" uid="uid://bykjukw6sopdq" path="res://scenes/door.tscn" id="1_i6alb"]
+[ext_resource type="PackedScene" uid="uid://qjw1hi2ihonq" path="res://scenes/static_collision.tscn" id="2_elli3"]
+[ext_resource type="PackedScene" uid="uid://e3ba8qj31bqa" path="res://scenes/tree.tscn" id="3_nyve7"]
+
+[node name="Level5" type="Node2D" unique_id=1350281208]
+
+[node name="Door_A" parent="." unique_id=2068487414 instance=ExtResource("1_i6alb")]
+position = Vector2(0, -245)
+scale = Vector2(3, 1)
+door_type = "down"
+target_room = "res://scenes/rooms/level4.tscn"
+target_door = "Door_B"
+
+[node name="StaticCollision" parent="." unique_id=801984992 instance=ExtResource("2_elli3")]
+position = Vector2(-227, -255.99998)
+scale = Vector2(20, 40)
+
+[node name="StaticCollision8" parent="." unique_id=79732630 instance=ExtResource("2_elli3")]
+position = Vector2(1467, -77.999985)
+scale = Vector2(20, 40)
+
+[node name="StaticCollision2" parent="." unique_id=840079234 instance=ExtResource("2_elli3")]
+position = Vector2(229.99998, -369.33)
+scale = Vector2(20, 20)
+
+[node name="StaticCollision3" parent="." unique_id=693255964 instance=ExtResource("2_elli3")]
+position = Vector2(9, 154.99995)
+scale = Vector2(20, 20)
+
+[node name="StaticCollision4" parent="." unique_id=1697640053 instance=ExtResource("2_elli3")]
+position = Vector2(-22.000015, -50)
+rotation = 0.7853982
+
+[node name="StaticCollision5" parent="." unique_id=699136487 instance=ExtResource("2_elli3")]
+position = Vector2(427, -174)
+rotation = 0.7853982
+
+[node name="StaticCollision6" parent="." unique_id=747955510 instance=ExtResource("2_elli3")]
+position = Vector2(1243, -521)
+scale = Vector2(100, 20)
+
+[node name="StaticCollision7" parent="." unique_id=1380261319 instance=ExtResource("2_elli3")]
+position = Vector2(1152, 223)
+scale = Vector2(100, 20)
+
+[node name="Tree" parent="." unique_id=837104587 instance=ExtResource("3_nyve7")]
+position = Vector2(498, -7)
+scale = Vector2(3, 3)
+
+[node name="Tree2" parent="." unique_id=1991300146 instance=ExtResource("3_nyve7")]
+position = Vector2(600, -7)
+scale = Vector2(3, 3)
+
+[node name="Tree3" parent="." unique_id=1929258505 instance=ExtResource("3_nyve7")]
+position = Vector2(800, -7)
+scale = Vector2(3, 3)
+
+[node name="Tree4" parent="." unique_id=1359268310 instance=ExtResource("3_nyve7")]
+position = Vector2(900, -7)
+scale = Vector2(3, 3)
+
+[node name="Tree5" parent="." unique_id=1783018780 instance=ExtResource("3_nyve7")]
+position = Vector2(1100, -7)
+scale = Vector2(3, 3)
+
+[node name="Label" type="Label" parent="." unique_id=1512558288]
+offset_left = 1169.0
+offset_top = -44.999992
+offset_right = 1316.0
+offset_bottom = -21.999992
+scale = Vector2(0.65629065, 0.62510234)
+text = "Thanks for playing!"
